@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f5f0; /* Light beige/cream */
+    color: #333;
+    /* --- NOUVELLES RÈGLES POUR L'AFFICHAGE PC SUR MOBILE --- */
+    min-width: 980px; /* Assure que le contenu ne descende pas en dessous de cette largeur */
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+    /* ---------------------------------------------------- */
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* --- NOUVELLE RÈGLE POUR L'AFFICHAGE PC SUR MOBILE --- */
+    min-width: 900px; /* Assure que le conteneur ne se réduit pas trop */
+    /* ---------------------------------------------------- */
+}
+
+h1 {
+    text-align: center;
+    color: #8c5252; /* Deep red/brown for titles */
+    margin-bottom: 30px;
+}
+
+/* Filters Section */
+.filters-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f4e9e1; /* Lighter beige for filters background */
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 10px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #6a4a4a; /* Slightly darker than title for labels */
+}
+
+.filter-group input[type="date"],
+.filter-group select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 180px; /* Fixed width for desktop */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Event List */
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Event Card */
+.event-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffe; /* Very light yellow/cream for cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for absolute positioning of description */
+}
+
+.date-box {
+    width: 100px;
+    height: 100px;
+    background-color: #d17a3f; /* Orange/brown for date box */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-shrink: 0; /* Prevent shrinking on larger screens */
+    margin-right: 20px; /* Space between date box and event details */
+}
+
+.date-month {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+}
+
+.date-day {
+    font-size: 2.2em;
+}
+
+.event-details {
+    flex-grow: 1; /* Allow details to take available space */
+    margin-right: 20px; /* Space before buttons */
+}
+
+.event-details h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #8c5252; /* Deep red/brown */
+    font-size: 1.5em;
+}
+
+.event-details p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.event-details p.event-type {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 3px;
+}
+
+.event-details p.event-location {
+    font-weight: normal;
+    color: #444;
+}
+
+.event-actions {
+    display: flex;
+    flex-direction: column; /* Default to column for buttons */
+    align-items: flex-end; /* Align buttons to the right */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.reserve-button {
+    background-color: #d17a3f; /* Orange/brown */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping inside button */
+}
+
+.reserve-button:hover {
+    background-color: #b36435; /* Darker orange on hover */
+}
+
+.more-info-button {
+    background: none;
+    border: none;
+    color: #8c5252; /* Deep red/brown */
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin-top: 10px; /* Space between reserve and more info */
+    padding: 0;
+}
+
+.event-description {
+    background-color: #f0e6d8; /* Slightly darker background for description */
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #444;
+    line-height: 1.5;
+    display: none; /* Hidden by default, toggled by JavaScript */
+    width: 100%; /* Take full width of the card */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.event-card.expanded .event-description {
+    display: block; /* Show when expanded */
+}
