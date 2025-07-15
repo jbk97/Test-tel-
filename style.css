@@ -5,6 +5,10 @@ body {
     padding: 20px;
     background-color: #f8f5f0; /* Light beige/cream */
     color: #333;
+    /* --- NOUVELLE RÈGLE POUR L'AFFICHAGE PC SUR MOBILE --- */
+    min-width: 980px; /* Assure que le contenu ne descende pas en dessous de cette largeur */
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+    /* ---------------------------------------------------- */
 }
 
 .container {
@@ -14,6 +18,9 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* --- NOUVELLE RÈGLE POUR L'AFFICHAGE PC SUR MOBILE --- */
+    min-width: 900px; /* Assure que le conteneur ne se réduit pas trop */
+    /* ---------------------------------------------------- */
 }
 
 h1 {
@@ -184,131 +191,5 @@ h1 {
     display: block; /* Show when expanded */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 10px; /* Reduce overall padding */
-    }
-
-    .container {
-        padding: 15px; /* Adjust container padding for mobile */
-        margin: 10px auto; /* Adjust margin */
-    }
-
-    h1 {
-        font-size: 1.8em; /* Adjust title size */
-        margin-bottom: 20px;
-    }
-
-    /* Filters Section - Mobile adjustments */
-    .filters-container {
-        flex-direction: column; /* Stack filters vertically on mobile */
-        align-items: stretch; /* Stretch items to fill container */
-        gap: 15px; /* Add space between stacked filters */
-        padding: 15px; /* Adjust padding for filters container */
-    }
-
-    .filter-group {
-        width: 100%; /* Make each filter group take full width */
-        margin: 0; /* Remove horizontal margins */
-    }
-
-    .filter-group label {
-        margin-bottom: 5px; /* Space between label and input */
-    }
-
-    .filter-group input[type="date"],
-    .filter-group select {
-        width: 100%; /* Make input/select take full width of its group */
-        max-width: 100%; /* Ensure it doesn't exceed 100% */
-        padding: 12px; /* Slightly more padding for touch targets */
-        font-size: 1.1em; /* Slightly larger font for readability */
-    }
-
-    /* Event Card Section - Mobile adjustments */
-    .event-card {
-        flex-direction: column; /* Stack date and details vertically on smaller screens */
-        align-items: center; /* Center items when stacked */
-        padding: 15px; /* Adjust card padding */
-        gap: 15px; /* Space between date box and event details */
-        text-align: center; /* Center text within the card */
-    }
-
-    .date-box {
-        width: 80px; /* Smaller width for date box on mobile */
-        height: 80px; /* Smaller height for date box on mobile */
-        min-width: 80px; /* Ensure it doesn't shrink too much */
-        min-height: 80px; /* Ensure it doesn't shrink too much */
-        margin-right: 0; /* Remove margin-right when stacked */
-        /* Re-center month and day if they don't fit perfectly in the smaller box */
-        line-height: 1.1; /* Adjust line height for better fit */
-        font-size: 0.9em; /* Adjust overall font size within the box */
-    }
-
-    .date-month {
-        font-size: 0.8em; /* Smaller month text */
-        margin-bottom: 2px; /* Reduce gap */
-    }
-
-    .date-day {
-        font-size: 1.8em; /* Smaller day text, relative to box */
-    }
-
-    .event-details {
-        text-align: center; /* Center event text */
-        width: 100%; /* Take full width */
-        margin-right: 0; /* Remove margin-right */
-    }
-
-    .event-details h3 {
-        font-size: 1.4em; /* Adjust title font size */
-        margin-bottom: 8px;
-    }
-
-    .event-details p {
-        font-size: 1em; /* Adjust paragraph font size */
-        margin-bottom: 5px;
-    }
-
-    .event-actions {
-        display: flex;
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons */
-        gap: 10px; /* Space between buttons */
-        width: 100%; /* Take full width */
-        margin-top: 10px; /* Add space above actions */
-    }
-
-    .reserve-button {
-        width: 90%; /* Make reserve button take more width on mobile, but not full */
-        max-width: 250px; /* Prevent it from being too wide on slightly larger mobiles */
-        padding: 12px 0; /* Adjust padding */
-        font-size: 1.1em; /* Adjust font size for better touch */
-    }
-
-    .more-info-button {
-        font-size: 1em; /* Adjust font size */
-        margin-top: 0; /* Remove extra margin if already in gap */
-    }
-
-    .event-description {
-        margin-top: 10px; /* Reduce top margin for description */
-    }
-}
-
-/* For even smaller screens (e.g., iPhone 5/SE) if needed */
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    .filter-group input[type="date"],
-    .filter-group select {
-        padding: 10px;
-        font-size: 1em;
-    }
-
-    .event-details h3 {
-        font-size: 1.3em;
-    }
-}
+/* J'ai supprimé toutes les media queries qui adapte l'affichage mobile */
+/* L'objectif est de conserver l'affichage PC tel quel, même sur mobile. */
